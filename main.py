@@ -37,12 +37,12 @@ class Cafe:
         if not table_found:
             print(f"Посетитель номер {customer.number} ожидает свободный стол.")
             self.queue.put(customer)
-            self.queue.get()  # Правильно вызвали метод get без передачи customer
+            self.queue.get()
 
 # Класс для посетителей
 class Customer(threading.Thread):
-    def __init__(self, number, cafe):  # Поправил init метод
-        super().__init__()  # Используем super корректно
+    def __init__(self, number, cafe):
+        super().__init__()
         self.number = number
         self.cafe = cafe
 
